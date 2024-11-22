@@ -89,3 +89,13 @@ https://docs.github.com/fr/actions/security-for-github-actions/security-guides/u
 
 - Réponses :
   - Chemin :  settings du repo GitHub -> Secrets and variables -> action -> New repository secret
+
+### Exercice 2
+Grâce à https://github.com/webfactory/ssh-agent , configurez l’agent ssh de votre runner CI pour qu’il utilise votre clé SSH privée.
+Ajoutez une étape pour mettre à jour votre known_hosts (ssh-keyscan -H <IP_SERVER> >> ~/.ssh/known_hosts)
+Ajoutez ensuite une étape qui fait un “ls” sur votre serveur à distance.
+
+- Réponses :
+  - [Action](https://github.com/Adambizien/PokemonDex/actions/runs/11974703109)
+  - [Structure](https://github.com/Adambizien/PokemonDex/blob/da11e75263ead289f3c5b6192ff1bd96033d5428/.github/workflows/pokemonAction.yml)
+
