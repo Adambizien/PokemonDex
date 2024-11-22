@@ -32,7 +32,7 @@ function App() {
   const fetchCards = async (query: string, page: number): Promise<void> => {
     setLoading(true);
     try {
-      let url = query
+      const url = query
         ? `https://api.pokemontcg.io/v2/cards?q=name:${query}&page=${page}&pageSize=${cardsPerPage}`
         : `https://api.pokemontcg.io/v2/cards?page=${page}&pageSize=${cardsPerPage}`;
 
