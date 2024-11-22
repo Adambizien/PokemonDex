@@ -17,7 +17,7 @@ jobs:
         uses: actions/setup-node@v4
         with:
           cache: 'npm'
-          cache-dependency-path: subdir/package-lock.json
+          cache-dependency-path: package-lock.json
 
       # On installe les dépendances et clean le node modules
       - name: Install Dependencies
@@ -38,3 +38,4 @@ jobs:
       # On lance les tests eslint pour repérer les erreurs
       - name: run eslint
         run: npx eslint "src/**/*.{js,jsx,ts,tsx}"
+ 
