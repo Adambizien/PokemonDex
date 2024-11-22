@@ -100,14 +100,24 @@ Ajoutez ensuite une étape qui fait un “ls” sur votre serveur à distance.
   - [Structure](https://github.com/Adambizien/PokemonDex/blob/da11e75263ead289f3c5b6192ff1bd96033d5428/.github/workflows/pokemonAction.yml)
 
 ### Exercice 3
-Manuellement, sur votre serveur, configurez un nouveau vhost avec Apache ou Nginx (votre choix). Créez depuis votre serveur un fichier index.html dedans avec du texte. Configurez un sous-domaine pour pointer sur ce domaine, ainsi qu’un certificat SSL (avec Cerbot).
+Manuellement, sur votre serveur, configurez un nouveau vhost avec Apache ou Nginx (votre choix). Créez depuis votre serveur un fichier index.html dedans avec du texte.
+Configurez un sous-domaine pour pointer sur ce domaine, ainsi qu’un certificat SSL (avec Cerbot).
 
-- Réponses : https://pokemondex.bizienadam.fr/
+- Réponses : 
+https://pokemondex.bizienadam.fr/
 
 ### Exercice 4
-Créez une nouvelle action (un nouveau fichier .yml) qui vous servira de CD, le trigger de cette action doit faire en sorte que cette action se déclenche uniquement pour les push sur la branche main. Lien utile : https://docs.github.com/fr/actions/writing-workflows/choosing-when-your-workflow-runs/events-that-trigger-workflows#push Dans cette action, re-configurez votre agent ssh et vos known_hosts, puis utilisez la commande scp pour envoyer vos fichiers sur le serveur. La commande scp s’utilise comme ceci : scp -r dist/* debian@: Par exemple : scp -r dist/* debian@151.80.58.182:/home/debian/ Les fichiers à envoyer sont ceux présents dans votre dossier “dist”, il faut au préalable exécuter la commande de build pour les générer.
+Créez une nouvelle action (un nouveau fichier .yml) qui vous servira de CD, le trigger de cette action doit faire en sorte que cette action se déclenche uniquement pour les push sur la branche main.
+Lien utile : https://docs.github.com/fr/actions/writing-workflows/choosing-when-your-workflow-runs/events-that-trigger-workflows#push 
+Dans cette action, re-configurez votre agent ssh et vos known_hosts, puis utilisez la commande scp pour envoyer vos fichiers sur le serveur.
+La commande scp s’utilise comme ceci :
+scp -r dist/* debian@<ip>:<chemin-distant>
+Par exemple :
+scp -r dist/* debian@151.80.58.182:/home/debian/
+Les fichiers à envoyer sont ceux présents dans votre dossier “dist”, il faut au préalable exécuter la commande de build pour les générer.
 
 - Réponses :
   - [Action]()
   - [Structure](https://github.com/Adambizien/PokemonDex/blob/9e2b95161d5ce66e5866f71a4581235a9255bd2d/.github/workflows/deploy.yml)
+
 
