@@ -7,6 +7,18 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
+
+      # On fait un checkout du code depuis le dépôt
+      - name: GitHub Checkout
+        uses: actions/checkout@v2
+
+      # On installe Node.js avec un cache pour npm
+      - name: Use Node.js
+        uses: actions/setup-node@v4
+        with:
+          cache: 'npm'
+          cache-dependency-path: package-lock.json
+
       # Install dependencies
       - name: Install Dependencies
         run: npm install
