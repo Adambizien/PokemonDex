@@ -57,10 +57,15 @@ Configurer l’action installant Node pour utiliser son système de cache : http
 ### Exercice 6
 Rajoutez une branch policy sur votre branche “main” qui :
 force les développeurs à faire des PR
-empêche les PR qui ne build pas d’être mergés dans main
+empêche les PR qui ne build pas d’être mergées dans main
+
 
 ### Exercice 7
 Configurez une étape supplémentaire pour lancer vos tests Cypress e2e.
-Vous pouvez utilisez l’action faites pour ça : https://github.com/cypress-io/github-action 
-Activez aussi le mode vidéo de Cypress et hébergez le résultat vidéo sur un artifact GitHub.
+Vous pouvez utiliser l’action faite pour ça : https://github.com/cypress-io/github-action 
+La commande “npx wait-on” sera utile 🙂
+
+### Exercice 8
+Activez le mode vidéo de Cypress et hébergez le résultat vidéo sur un artifact GitHub.
+(https://github.com/cypress-io/github-action?tab=readme-ov-file#artifacts)
 
