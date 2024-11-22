@@ -11,7 +11,7 @@
   Mettre en place une CI Node : https://docs.github.com/en/actions/use-cases-and-examples/building-and-testing/building-and-testing-nodejs 
 
   - Réponse :
-    - [ici](https://github.com/Adambizien/PokemonDex/actions/runs/11969897278)
+    - [Action](https://github.com/Adambizien/PokemonDex/actions/runs/11969897278)
     - [structure](https://github.com/Adambizien/PokemonDex/blob/cf9a758857a9f1844d1875edabfb023b34764c47/.github/workflows/test.yml)
 
  
@@ -41,8 +41,8 @@ typescript doit passer, avant le build, et générer une erreur si un fichier ne
 une étape doit “builder” le projet
 
 - Réponses :
-  - Failure type : [ici](https://github.com/Adambizien/PokemonDex/actions/runs/11971443009/job/33376280340)
-  - Success type :  [ici](https://github.com/Adambizien/PokemonDex/actions/runs/11971475063/job/33376378352)
+  - Failure type : [Action](https://github.com/Adambizien/PokemonDex/actions/runs/11971443009/job/33376280340)
+  - Success type :  [Action](https://github.com/Adambizien/PokemonDex/actions/runs/11971475063/job/33376378352)
   - [Structure](https://github.com/Adambizien/PokemonDex/blob/44e383283bb63e2acf27c590b4b091b677562deb/.github/workflows/pokemonAction.yml)
   
   
@@ -50,7 +50,7 @@ une étape doit “builder” le projet
 Configurer l’action installant Node pour utiliser son système de cache : https://github.com/actions/setup-node?tab=readme-ov-file#caching-global-packages-data 
 
 - Réponses :
-  - [ici](https://github.com/Adambizien/PokemonDex/actions/runs/11971779986/job/33377298437)
+  - [Action](https://github.com/Adambizien/PokemonDex/actions/runs/11971779986/job/33377298437)
   - [Structure](https://github.com/Adambizien/PokemonDex/blob/414e312b1e49d9eb1a1d3314cc547b4b5f74bcec/.github/workflows/pokemonAction.yml)
 
 
@@ -70,7 +70,22 @@ Configurez une étape supplémentaire pour lancer vos tests Cypress e2e.
 Vous pouvez utiliser l’action faite pour ça : https://github.com/cypress-io/github-action 
 La commande “npx wait-on” sera utile 🙂
 
+- Réponses :
+  - [Action](https://github.com/Adambizien/PokemonDex/actions/runs/11972529516/job/33379623988)
+  - [Structure](https://github.com/Adambizien/PokemonDex/blob/7912ae00fe180260a79be899c60906cf9432ead7/.github/workflows/pokemonAction.yml)
+
 ### Exercice 8
 Activez le mode vidéo de Cypress et hébergez le résultat vidéo sur un artifact GitHub.
 (https://github.com/cypress-io/github-action?tab=readme-ov-file#artifacts)
 
+- Réponses : 
+  - [Action](https://github.com/Adambizien/PokemonDex/actions/runs/11973603234)
+  - [Structure](https://github.com/Adambizien/PokemonDex/blob/95631f5865200b646dc02449b2399d8c7a6348aa/.github/workflows/pokemonAction.yml)
+
+## Exercices CI/CD A3 - J4 - Après-Midi
+### Exercice 1
+Ajoutez votre clé ssh privée aux secrets de votre projet GitHub.
+https://docs.github.com/fr/actions/security-for-github-actions/security-guides/using-secrets-in-github-actions 
+
+- Réponses :
+  - Chemin :  settings du repo GitHub -> Secrets and variables -> action -> New repository secret
