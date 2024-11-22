@@ -17,7 +17,7 @@ jobs:
         run: npm ci
       
       - name: Run TypeScript type-check
-        run: npx tsc --noEmit
+        run: npx tsc -b --noEmit
 
       - name: Run build
         run: npm run build
