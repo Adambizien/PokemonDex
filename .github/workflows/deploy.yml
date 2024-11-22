@@ -1,27 +1,30 @@
-name: Deploy 
-on:
-  push:
-    branches:
-      - 'main'
-jobs:
-  deploy:
-    runs-on: ubuntu-latest
-    steps:
+# name: Deploy 
+# on:
+#   push:
+#     branches:
+#       - 'main'
+# jobs:
+#   deploy:
+#     runs-on: ubuntu-latest
+#     steps:
+#       # on installe les dépendances
+#       - name: Install dependencies
+#         run: npm install
 
-      # On build le projet
-      - name: Run build
-        run: npm run build
+#       # On build le projet
+#       - name: Run build
+#         run: npm run build
       
-        #setup SSH
-      - uses: webfactory/ssh-agent@v0.9.0
-        with:
-            ssh-private-key: |
-                  ${{ secrets.SECRET_SSH_KEY }}
+#       #setup SSH
+#       - uses: webfactory/ssh-agent@v0.9.0
+#         with:
+#             ssh-private-key: |
+#                   ${{ secrets.SECRET_SSH_KEY }}
 
-      # Update known_hosts
-      - name: Update known_hosts
-        run: ssh-keyscan -H 51.178.27.150 >> ~/.ssh/known_hosts
+#       # Update known_hosts
+#       - name: Update known_hosts
+#         run: ssh-keyscan -H 51.178.27.150 >> ~/.ssh/known_hosts
     
-      # On fait un ls sur le serveur distant
-      - name: List remote files
-        run: ssh debian@51.178.27.150 'scp -r dist/* debian@51.178.27.150:./var/www/html/PokemonDex'
+#       # On fait un ls sur le serveur distant
+#       - name: List remote files
+#         run: ssh debian@51.178.27.150 'scp -r dist/* debian@51.178.27.150:./var/www/html/PokemonDex'
