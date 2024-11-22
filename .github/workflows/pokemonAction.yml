@@ -38,15 +38,18 @@ jobs:
       # On vérifie les erreurs de code avec ESLint
       - name: run eslint
         run: npx eslint "src/**/*.{js,jsx,ts,tsx}"
-        
+
+      # Démarrer le serveur de développement dans une étape séparée
+      - name: Start the development server
+        run: npm run dev &
+
       # On attend que l'application soit prête
       - name: Wait for app to be ready
         run: npx wait-on http://localhost:5173
 
-      # On lance les tests Cypress
-      - name: Run Cypress Tests
-        uses: cypress-io/github-action@v5
+      # On lance les tests Cypress sur Chrome
+      - name: E2E on Chrome
+        uses: actions/checkout@v4
+      - uses: cypress-io/github-action@v6
         with:
-          start: npm run dev
-          wait-on: 'http://localhost:5173'
-          wait-on-timeout: 60 
+          browser: chrome
