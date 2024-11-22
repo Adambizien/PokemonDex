@@ -118,7 +118,6 @@ Les fichiers à envoyer sont ceux présents dans votre dossier “dist”, il fa
 
 - Réponses :
   - [Action]()
-  - [Structure]()
-
+  - [Structure](https://github.com/Adambizien/PokemonDex/blob/9e2b95161d5ce66e5866f71a4581235a9255bd2d/.github/workflows/deploy.yml)
 
 
