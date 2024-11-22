@@ -4,6 +4,8 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
+      - name: Hello world
+        run: "echo Hello, world!"
       - name : GitHub Checkout
         uses: actions/checkout@v2
       - name : Use Node.js
