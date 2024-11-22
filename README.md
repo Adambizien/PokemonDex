@@ -117,7 +117,7 @@ scp -r dist/* debian@151.80.58.182:/home/debian/
 Les fichiers à envoyer sont ceux présents dans votre dossier “dist”, il faut au préalable exécuter la commande de build pour les générer.
 
 - Réponses :
-  - [Action]()
+  - [Action](https://github.com/Adambizien/PokemonDex/actions/runs/11976317937)
   - [Structure](https://github.com/Adambizien/PokemonDex/blob/9e2b95161d5ce66e5866f71a4581235a9255bd2d/.github/workflows/deploy.yml)
 
 
