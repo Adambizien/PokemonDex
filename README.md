@@ -39,6 +39,8 @@ typescript doit passer, avant le build, et générer une erreur si un fichier ne
 une étape doit “builder” le projet
 
 - Réponses :
+  - Failure type : [ici](https://github.com/Adambizien/PokemonDex/actions/runs/11971443009/job/33376280340)
+  - Success type :  [ici](https://github.com/Adambizien/PokemonDex/actions/runs/11971475063/job/33376378352)
   - [structure](https://github.com/Adambizien/PokemonDex/blob/44e383283bb63e2acf27c590b4b091b677562deb/.github/workflows/pokemonAction.yml)
   
   
@@ -46,14 +48,14 @@ une étape doit “builder” le projet
 Configurer l’action installant Node pour utiliser son système de cache : https://github.com/actions/setup-node?tab=readme-ov-file#caching-global-packages-data 
 
 - Réponses :
-  - Failure type : [ici](https://github.com/Adambizien/PokemonDex/actions/runs/11971443009/job/33376280340)
-  - Success type :  [ici](https://github.com/Adambizien/PokemonDex/actions/runs/11971475063/job/33376378352)
 
-Exercice 6
+
+### Exercice 6
 Rajoutez une branch policy sur votre branche “main” qui :
 force les développeurs à faire des PR
 empêche les PR qui ne build pas d’être mergés dans main
-Exercice 7
+
+### Exercice 7
 Configurez une étape supplémentaire pour lancer vos tests Cypress e2e.
 Vous pouvez utilisez l’action faites pour ça : https://github.com/cypress-io/github-action 
 Activez aussi le mode vidéo de Cypress et hébergez le résultat vidéo sur un artifact GitHub.
