@@ -27,10 +27,10 @@
   Faites quelques commits de tests pour vous assurez que la pipeline “casse” bien lorsque l’un des 2 outils ne valide pas le code.
 
   Réponse : 
-      -success : [ici](https://github.com/Adambizien/PokemonDex/actions/runs/11970345324)
-      -prettier failure : [ici](https://github.com/Adambizien/PokemonDex/actions/runs/11970373305)
-      -eslint failure : [ici](https://github.com/Adambizien/PokemonDex/actions/runs/11970412385)
-      -[structure](https://github.com/Adambizien/PokemonDex/blob/27bbe10da90cfd569e05dde348d669b2c9f636b8/.github/workflows/test.yml)
+      - Success : [ici](https://github.com/Adambizien/PokemonDex/actions/runs/11970345324)
+      - Prettier failure : [ici](https://github.com/Adambizien/PokemonDex/actions/runs/11970373305)
+      - Eslint failure : [ici](https://github.com/Adambizien/PokemonDex/actions/runs/11970412385)
+      - [structure](https://github.com/Adambizien/PokemonDex/blob/27bbe10da90cfd569e05dde348d669b2c9f636b8/.github/workflows/test.yml)
 
   
 ### Exercice 4
