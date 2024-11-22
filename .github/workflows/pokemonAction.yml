@@ -73,4 +73,4 @@ jobs:
     
       # On fait un ls sur le serveur distant
       - name: List remote files
-        run: ssh user@51.178.27.150 'ls -la /var/www/html'
+        run: ssh debian@51.178.27.150 'ls -la /var/www/html'
