@@ -1,4 +1,5 @@
 ## Exercices CI/CD A3 - J4 - Matin
+(J'ai changer le nom de la CI a la fin ^^)
 ### Exercice 0
   Mettez votre projet de carte de Pokemon sur un repo GitHub public et envoyez-moi le lien sur Discord.
   
