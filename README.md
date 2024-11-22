@@ -9,7 +9,7 @@
   Mettre en place une CI https://docs.github.com/fr/actions/writing-workflows/quickstart
   Mettre en place une CI Node : https://docs.github.com/en/actions/use-cases-and-examples/building-and-testing/building-and-testing-nodejs 
 
-  Réponse : [ici](https://github.com/Adambizien/PokemonDex/actions/runs/11969897278)
+  - Réponse : [ici](https://github.com/Adambizien/PokemonDex/actions/runs/11969897278)
   [structure](https://github.com/Adambizien/PokemonDex/blob/cf9a758857a9f1844d1875edabfb023b34764c47/.github/workflows/test.yml)
 
  
@@ -17,7 +17,7 @@
   Sur votre repository, configurez prettier. (n’utilisez pas la partie “Git Hooks”)
   Eslint devrait déjà être présent grâce à vite, vérifiez que la commande “npm run lint” génère bien une erreur lorsque vous utilisez un “let” au lieu d’un “const”.
   
- Réponse : 
+ - Réponse : 
       même que l'ex 3
   
 ### Exercice 3
