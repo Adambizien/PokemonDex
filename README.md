@@ -19,7 +19,7 @@
   Eslint devrait déjà être présent grâce à vite, vérifiez que la commande “npm run lint” génère bien une erreur lorsque vous utilisez un “let” au lieu d’un “const”.
   
  - Réponses : 
-      même que l'ex 3
+      la même que l'ex 3
   
 ### Exercice 3
   Ajoutez quelques étapes de lint sur votre pipeline :
