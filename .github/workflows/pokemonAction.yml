@@ -4,26 +4,37 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
+      # Un petit hello world pour commencer
       - name: Hello world
         run: "echo Hello, world!"
 
+      # On fait un checkout du code
       - name: GitHub Checkout
         uses: actions/checkout@v2
 
+      # On installe Node.js avec un cache pour npm
       - name: Use Node.js
         uses: actions/setup-node@v4
+        with:
+          cache: 'npm'
+          cache-dependency-path: subdir/package-lock.json
 
+      # On installe les dépendances et clean le node modules
       - name: Install Dependencies
         run: npm ci
       
+      # On lance les tests type de TypeScript
       - name: Run TypeScript type-check
         run: npx tsc -b --noEmit
 
+      # On Build le projet
       - name: Run build
         run: npm run build
 
+      # On lance les tests le formatage des espace et tabulation
       - name: run prettier
         run: npx prettier --check "src/**/*.{js,jsx,ts,tsx,json,css,scss,md}"
-
+      
+      # On lance les tests eslint pour repérer les erreurs
       - name: run eslint
         run: npx eslint "src/**/*.{js,jsx,ts,tsx}"
