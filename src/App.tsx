@@ -20,7 +20,6 @@ interface Card {
 }
 
 function App() {
-  //test
   const [searchQuery, setSearchQuery] = useState<string>("");
   const [cards, setCards] = useState<Card[]>([]);
   const [currentPage, setCurrentPage] = useState<number>(1);
