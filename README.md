@@ -1,5 +1,5 @@
 ## Exercices CI/CD A3 - J4 - Matin
-(J'ai changer le nom de la CI a la fin ^^)
+(J'ai changer le nom de la CI a la fin ^^ [ici](https://github.com/Adambizien/PokemonDex/blob/37bccace830fc07bf54d5786d0ec2550bb600e00/.github/workflows/pokemonAction.yml))
 ### Exercice 0
   Mettez votre projet de carte de Pokemon sur un repo GitHub public et envoyez-moi le lien sur Discord.
   
