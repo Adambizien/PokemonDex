@@ -1,5 +1,5 @@
 ## Exercices CI/CD A3 - J4 - Matin
-(J'ai changer le nom de la CI a la fin ^^)
+(J'ai changé le nom de la CI à la fin ^^ [ici](https://github.com/Adambizien/PokemonDex/blob/37bccace830fc07bf54d5786d0ec2550bb600e00/.github/workflows/pokemonAction.yml))
 ### Exercice 0
   Mettez votre projet de carte de Pokemon sur un repo GitHub public et envoyez-moi le lien sur Discord.
   
@@ -57,10 +57,20 @@ Configurer l’action installant Node pour utiliser son système de cache : http
 ### Exercice 6
 Rajoutez une branch policy sur votre branche “main” qui :
 force les développeurs à faire des PR
-empêche les PR qui ne build pas d’être mergés dans main
+empêche les PR qui ne build pas d’être mergées dans main
 
+- Réponses :
+  - Chemin la première fois : settings du repo GitHub -> Branches -> Add branch ruleset
+  - Si c'est déjà créé : settings du repo GitHub -> Rules -> Rulesets -> sélectionner le ruleset souhaité
+  - Je l'ai appelé Main -> je l'ai activé -> j'ai défini la branche cible par défaut -> j'ai coché restrict deletions, require a pull request before merging, require status checks to pass (en sélectionnant l'action pokemonAction) et block force pushes.
+    
+ 
 ### Exercice 7
 Configurez une étape supplémentaire pour lancer vos tests Cypress e2e.
-Vous pouvez utilisez l’action faites pour ça : https://github.com/cypress-io/github-action 
-Activez aussi le mode vidéo de Cypress et hébergez le résultat vidéo sur un artifact GitHub.
+Vous pouvez utiliser l’action faite pour ça : https://github.com/cypress-io/github-action 
+La commande “npx wait-on” sera utile 🙂
+
+### Exercice 8
+Activez le mode vidéo de Cypress et hébergez le résultat vidéo sur un artifact GitHub.
+(https://github.com/cypress-io/github-action?tab=readme-ov-file#artifacts)
 
