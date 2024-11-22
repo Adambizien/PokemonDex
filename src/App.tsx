@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import './App.css';
+import React, { useState, useEffect } from "react";
+import "./App.css";
 
 interface CardImage {
   small: string;
@@ -20,7 +20,7 @@ interface Card {
 }
 
 function App() {
-  const [searchQuery, setSearchQuery] = useState<string>('');
+  const [searchQuery, setSearchQuery] = useState<string>("");
   const [cards, setCards] = useState<Card[]>([]);
   const [currentPage, setCurrentPage] = useState<number>(1);
   const [totalPages, setTotalPages] = useState<number>(1);
@@ -38,14 +38,14 @@ function App() {
 
       const response = await fetch(url, {
         headers: {
-          'X-Api-Key': 'c3b65ac2-1d35-495f-8c12-d650f5198453',
+          "X-Api-Key": "c3b65ac2-1d35-495f-8c12-d650f5198453",
         },
       });
       const data = await response.json();
       setCards(data.data);
       setTotalPages(Math.ceil(data.totalCount / cardsPerPage));
     } catch (error) {
-      console.error('Error fetching cards:', error);
+      console.error("Error fetching cards:", error);
     } finally {
       setLoading(false);
     }
@@ -64,7 +64,7 @@ function App() {
   const openModal = (card: Card): void => {
     setSelectedCard(card);
   };
-  
+
   const closeModal = (): void => {
     setSelectedCard(null);
   };
@@ -79,38 +79,42 @@ function App() {
           onChange={(e) => setSearchQuery(e.target.value)}
           placeholder="Search for Pokémon cards"
         />
-        <button id="search" type="submit">Search</button>
+        <button id="search" type="submit">
+          Search
+        </button>
       </form>
       <div className="cards-container">
         {loading ? (
           <div className="loading">
-            <img src="./public/bfaa157c2e3308471d51aa4feaf99293_w200.gif" alt="Loading" />
+            <img
+              src="./public/bfaa157c2e3308471d51aa4feaf99293_w200.gif"
+              alt="Loading"
+            />
           </div>
+        ) : cards.length === 0 ? (
+          <div className="no-results">No results found</div>
         ) : (
-          cards.length === 0 ? (
-            <div className="no-results">No results found</div>
-          ) : (
-            cards.map((card) => (
-              <div key={card.id} className="card" onClick={() => openModal(card)}>
-                <div className="card-inner">
-                  <div className="card-front">
-                    <img src={card.images.large} alt={card.name} />
-                  </div>
-                  <div className="card-back">
-                    <div className="card-back-content">
-                      <h2>{card.name}</h2>
-                      <p>Attacks:</p>
-                      <ul>
-                        {card.attacks && card.attacks.map((attack, index) => (
+          cards.map((card) => (
+            <div key={card.id} className="card" onClick={() => openModal(card)}>
+              <div className="card-inner">
+                <div className="card-front">
+                  <img src={card.images.large} alt={card.name} />
+                </div>
+                <div className="card-back">
+                  <div className="card-back-content">
+                    <h2>{card.name}</h2>
+                    <p>Attacks:</p>
+                    <ul>
+                      {card.attacks &&
+                        card.attacks.map((attack, index) => (
                           <li key={index}>{attack.name}</li>
                         ))}
-                      </ul>
-                    </div>
+                    </ul>
                   </div>
                 </div>
               </div>
-            ))
-          )
+            </div>
+          ))
         )}
       </div>
       <div className="pagination">
@@ -120,7 +124,9 @@ function App() {
         >
           Previous
         </button>
-        <span>Page {currentPage} of {totalPages}</span>
+        <span>
+          Page {currentPage} of {totalPages}
+        </span>
         <button
           onClick={() => setCurrentPage(currentPage + 1)}
           disabled={currentPage === totalPages}
@@ -129,21 +135,25 @@ function App() {
         </button>
       </div>
       {selectedCard && (
-        <div className="modal" style={{ display: 'block' }}>
+        <div className="modal" style={{ display: "block" }}>
           <div className="modal-content">
-            <span className="close" onClick={closeModal}>&times;</span>
+            <span className="close" onClick={closeModal}>
+              &times;
+            </span>
             <h2>{selectedCard.name}</h2>
             <p>Attacks:</p>
             <ul>
-              {selectedCard.attacks && selectedCard.attacks.map((attack, index) => (
-                <li key={index}>{attack.name}</li>
-              ))}
+              {selectedCard.attacks &&
+                selectedCard.attacks.map((attack, index) => (
+                  <li key={index}>{attack.name}</li>
+                ))}
             </ul>
             <p>Cost:</p>
             <ul>
-              {selectedCard.attacks && selectedCard.attacks.map((attack, index) => (
-                <li key={index}>{attack.convertedEnergyCost}</li>
-              ))}
+              {selectedCard.attacks &&
+                selectedCard.attacks.map((attack, index) => (
+                  <li key={index}>{attack.convertedEnergyCost}</li>
+                ))}
             </ul>
           </div>
         </div>

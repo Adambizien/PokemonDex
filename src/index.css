@@ -1,7 +1,7 @@
 body {
   background: black;
   background-size: cover;
-  font-family: 'Press Start 2P', cursive;
+  font-family: "Press Start 2P", cursive;
   color: #fff;
   margin: 0;
   padding: 0;
@@ -90,7 +90,7 @@ button:hover {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: url('pokemon_back_card.png') no-repeat center;
+  background: url("pokemon_back_card.png") no-repeat center;
   background-size: cover;
 }
 
