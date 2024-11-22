@@ -60,3 +60,16 @@ jobs:
         with:
           name: cypress-video
           path: cypress/videos
+
+      #setup SSH
+      - uses: webfactory/ssh-agent@v0.9.0
+        with:
+            ssh-private-key: |
+                  ${{ secrets.SECRET_SSH_KEY }}
+
+      # Update known_hosts
+      - name: Update known_hosts
+        run: ssh-keyscan -H 51.178.27.150 >> ~/.ssh/known_hosts
+    
+      - name: ls -la
+        run: ssh ls -la /var/www/html
