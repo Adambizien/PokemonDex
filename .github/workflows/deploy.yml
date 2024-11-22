@@ -7,6 +7,10 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
+       #  On installe les dépendances et on nettoie node_modules
+      - name: Install Dependencies
+        run: npm ci
+      
       # on installe les dépendances
       - name: Install dependencies
         run: npm install
