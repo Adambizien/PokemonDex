@@ -59,7 +59,12 @@ Rajoutez une branch policy sur votre branche “main” qui :
 force les développeurs à faire des PR
 empêche les PR qui ne build pas d’être mergées dans main
 
-
+- Réponses :
+  - Chemin premier fois : settings du repo github -> Branches -> Add branch ruleset
+  - Si c'est déjà crée : settings du repo github -> Rules -> Rulesets -> selectioner la rulesets qu'on souhaite
+  -  je l'ai appler Main -> je l'ai activer -> j'ai set le target branches a default -> j'ai cochet restrict deletions, require a pull request before merging, require status checks to pass (en selectionnent l'action pokemonAction) et block force pushes.
+    
+ 
 ### Exercice 7
 Configurez une étape supplémentaire pour lancer vos tests Cypress e2e.
 Vous pouvez utiliser l’action faite pour ça : https://github.com/cypress-io/github-action 
