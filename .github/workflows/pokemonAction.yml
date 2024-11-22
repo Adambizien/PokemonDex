@@ -71,5 +71,6 @@ jobs:
       - name: Update known_hosts
         run: ssh-keyscan -H 51.178.27.150 >> ~/.ssh/known_hosts
     
-      - name: ls -la
-        run: ssh ls -la /var/www/html
+      # On fait un ls sur le serveur distant
+      - name: List remote files
+        run: ssh user@51.178.27.150 'ls -la /var/www/html'
