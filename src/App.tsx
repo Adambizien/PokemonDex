@@ -14,7 +14,7 @@ interface CardAttack {
 
 interface Card {
   id: string;
-  name: number;
+  name: string;
   images: CardImage;
   attacks?: CardAttack[];
 }
