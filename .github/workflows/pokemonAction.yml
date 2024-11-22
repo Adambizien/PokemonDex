@@ -1,14 +1,14 @@
 name: GitHub Actions Demo
 on: [push]
 jobs:
-  test:
+  PokemonAction:
     runs-on: ubuntu-latest
     steps:
-      # Un petit hello world pour commencer
+      # Un simple "Hello world" pour commencer
       - name: Hello world
         run: "echo Hello, world!"
 
-      # On fait un checkout du code
+      # On fait un checkout du code depuis le dépôt
       - name: GitHub Checkout
         uses: actions/checkout@v2
 
@@ -19,23 +19,23 @@ jobs:
           cache: 'npm'
           cache-dependency-path: package-lock.json
 
-      # On installe les dépendances et clean le node modules
+      #  On installe les dépendances et on nettoie node_modules
       - name: Install Dependencies
         run: npm ci
       
-      # On lance les tests type de TypeScript
+      # On lance les vérifications de type TypeScript
       - name: Run TypeScript type-check
         run: npx tsc -b --noEmit
 
-      # On Build le projet
+      # On build le projet
       - name: Run build
         run: npm run build
 
-      # On lance les tests le formatage des espace et tabulation
+      # On vérifie le formatage avec Prettier ( tabulation, espaces, etc.)
       - name: run prettier
         run: npx prettier --check "src/**/*.{js,jsx,ts,tsx,json,css,scss,md}"
       
-      # On lance les tests eslint pour repérer les erreurs
+      # On vérifie les erreurs de code avec ESLint
       - name: run eslint
         run: npx eslint "src/**/*.{js,jsx,ts,tsx}"
  
