@@ -39,7 +39,7 @@ jobs:
       - name: run eslint
         run: npx eslint "src/**/*.{js,jsx,ts,tsx}"
 
-      # Démarrer le serveur de développement dans une étape séparée
+      # On lance le serveur 
       - name: Start the development server
         run: npm run dev &
 
@@ -53,3 +53,11 @@ jobs:
       - uses: cypress-io/github-action@v6
         with:
           browser: chrome
+        env:
+          CYPRESS_Video: true
+      
+      - name: Upload Cypress Video Artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: cypress-video
+          path: cypress/videos
