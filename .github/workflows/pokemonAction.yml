@@ -35,7 +35,7 @@ jobs:
       - name: run prettier
         run: npx prettier --check "src/**/*.{js,jsx,ts,tsx,json,css,scss,md}"
       
-      # On vérifie les erreurs de code avec ESLint
+      # On vérifie les erreurs de code avec ESLint (qualité du code)
       - name: run eslint
         run: npx eslint "src/**/*.{js,jsx,ts,tsx}"
 
@@ -54,8 +54,23 @@ jobs:
         with:
           browser: chrome
       
+      # On upload les vidéos des tests Cypress
       - name: Upload Cypress Video Artifact
         uses: actions/upload-artifact@v3
         with:
           name: cypress-video
           path: cypress/videos
+
+      #setup SSH
+      - uses: webfactory/ssh-agent@v0.9.0
+        with:
+            ssh-private-key: |
+                  ${{ secrets.SECRET_SSH_KEY }}
+
+      # Update known_hosts
+      - name: Update known_hosts
+        run: ssh-keyscan -H 51.178.27.150 >> ~/.ssh/known_hosts
+    
+      # On fait un ls sur le serveur distant
+      - name: List remote files
+        run: ssh debian@51.178.27.150 'ls -la /var/www/html'
