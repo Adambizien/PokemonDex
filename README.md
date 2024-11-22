@@ -1,4 +1,5 @@
 ## Exercices CI/CD A3 - J4 - Matin
+(J'ai changer le nom de la CI a la fin ^^)
 ### Exercice 0
   Mettez votre projet de carte de Pokemon sur un repo GitHub public et envoyez-moi le lien sur Discord.
   
@@ -9,8 +10,9 @@
   Mettre en place une CI https://docs.github.com/fr/actions/writing-workflows/quickstart
   Mettre en place une CI Node : https://docs.github.com/en/actions/use-cases-and-examples/building-and-testing/building-and-testing-nodejs 
 
-  - Réponse : [ici](https://github.com/Adambizien/PokemonDex/actions/runs/11969897278)
-  [structure](https://github.com/Adambizien/PokemonDex/blob/cf9a758857a9f1844d1875edabfb023b34764c47/.github/workflows/test.yml)
+  - Réponse :
+    - [ici](https://github.com/Adambizien/PokemonDex/actions/runs/11969897278)
+    - [structure](https://github.com/Adambizien/PokemonDex/blob/cf9a758857a9f1844d1875edabfb023b34764c47/.github/workflows/test.yml)
 
  
 ### Exercice 2
@@ -18,7 +20,7 @@
   Eslint devrait déjà être présent grâce à vite, vérifiez que la commande “npm run lint” génère bien une erreur lorsque vous utilisez un “let” au lieu d’un “const”.
   
  - Réponses : 
-      même que l'ex 3
+      la même que l'ex 3
   
 ### Exercice 3
   Ajoutez quelques étapes de lint sur votre pipeline :
@@ -41,13 +43,15 @@ une étape doit “builder” le projet
 - Réponses :
   - Failure type : [ici](https://github.com/Adambizien/PokemonDex/actions/runs/11971443009/job/33376280340)
   - Success type :  [ici](https://github.com/Adambizien/PokemonDex/actions/runs/11971475063/job/33376378352)
-  - [structure](https://github.com/Adambizien/PokemonDex/blob/44e383283bb63e2acf27c590b4b091b677562deb/.github/workflows/pokemonAction.yml)
+  - [Structure](https://github.com/Adambizien/PokemonDex/blob/44e383283bb63e2acf27c590b4b091b677562deb/.github/workflows/pokemonAction.yml)
   
   
 ### Exercice 5
 Configurer l’action installant Node pour utiliser son système de cache : https://github.com/actions/setup-node?tab=readme-ov-file#caching-global-packages-data 
 
 - Réponses :
+  - [ici](https://github.com/Adambizien/PokemonDex/actions/runs/11971779986/job/33377298437)
+  - [Structure](https://github.com/Adambizien/PokemonDex/blob/414e312b1e49d9eb1a1d3314cc547b4b5f74bcec/.github/workflows/pokemonAction.yml)
 
 
 ### Exercice 6
