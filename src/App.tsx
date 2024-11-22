@@ -1,17 +1,35 @@
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import './App.css';
 
+interface CardImage {
+  small: string;
+  large: string;
+}
+
+interface CardAttack {
+  name: string;
+  damage?: string;
+  convertedEnergyCost?: number;
+}
+
+interface Card {
+  id: string;
+  name: string;
+  images: CardImage;
+  attacks?: CardAttack[];
+}
+
 function App() {
-  const [searchQuery, setSearchQuery] = useState('');
-  const [cards, setCards] = useState([]);
-  const [currentPage, setCurrentPage] = useState(1);
-  const [totalPages, setTotalPages] = useState(1);
-  const [loading, setLoading] = useState(false);
-  const [selectedCard, setSelectedCard] = useState(null);
+  const [searchQuery, setSearchQuery] = useState<string>('');
+  const [cards, setCards] = useState<Card[]>([]);
+  const [currentPage, setCurrentPage] = useState<number>(1);
+  const [totalPages, setTotalPages] = useState<number>(1);
+  const [loading, setLoading] = useState<boolean>(false);
+  const [selectedCard, setSelectedCard] = useState<Card | null>(null);
 
   const cardsPerPage = 10;
 
-  const fetchCards = async (query, page) => {
+  const fetchCards = async (query: string, page: number): Promise<void> => {
     setLoading(true);
     try {
       const url = query
@@ -37,17 +55,17 @@ function App() {
     fetchCards(searchQuery, currentPage);
   }, [currentPage]);
 
-  const search = (e) => {
+  const search = (e: React.FormEvent<HTMLFormElement>): void => {
     e.preventDefault();
     setCurrentPage(1);
     fetchCards(searchQuery, 1);
   };
 
-  const openModal = (card) => {
+  const openModal = (card: Card): void => {
     setSelectedCard(card);
   };
   
-  const closeModal = () => {
+  const closeModal = (): void => {
     setSelectedCard(null);
   };
 
