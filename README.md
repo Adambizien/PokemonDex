@@ -70,6 +70,10 @@ Configurez une étape supplémentaire pour lancer vos tests Cypress e2e.
 Vous pouvez utiliser l’action faite pour ça : https://github.com/cypress-io/github-action 
 La commande “npx wait-on” sera utile 🙂
 
+- Réponses :
+  - [ici](https://github.com/Adambizien/PokemonDex/actions/runs/11972529516/job/33379623988)
+  - [Structure](https://github.com/Adambizien/PokemonDex/blob/7912ae00fe180260a79be899c60906cf9432ead7/.github/workflows/pokemonAction.yml)
+
 ### Exercice 8
 Activez le mode vidéo de Cypress et hébergez le résultat vidéo sur un artifact GitHub.
 (https://github.com/cypress-io/github-action?tab=readme-ov-file#artifacts)
