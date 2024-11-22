@@ -35,7 +35,7 @@ jobs:
       - name: run prettier
         run: npx prettier --check "src/**/*.{js,jsx,ts,tsx,json,css,scss,md}"
       
-      # On vérifie les erreurs de code avec ESLint
+      # On vérifie les erreurs de code avec ESLint (qualité du code)
       - name: run eslint
         run: npx eslint "src/**/*.{js,jsx,ts,tsx}"
 
@@ -54,6 +54,7 @@ jobs:
         with:
           browser: chrome
       
+      # On upload les vidéos des tests Cypress
       - name: Upload Cypress Video Artifact
         uses: actions/upload-artifact@v3
         with:
