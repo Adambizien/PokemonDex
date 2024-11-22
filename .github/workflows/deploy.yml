@@ -1,30 +1,41 @@
-# name: Deploy 
-# on:
-#   push:
-#     branches:
-#       - 'main'
-# jobs:
-#   deploy:
-#     runs-on: ubuntu-latest
-#     steps:
-#       # on installe les dépendances
-#       - name: Install dependencies
-#         run: npm install
+name: Deploy 
+on:
+  push:
+    branches:
+      - 'main'
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
 
-#       # On build le projet
-#       - name: Run build
-#         run: npm run build
+      # On fait un checkout du code depuis le dépôt
+      - name: GitHub Checkout
+        uses: actions/checkout@v2
+
+      # On installe Node.js avec un cache pour npm
+      - name: Use Node.js
+        uses: actions/setup-node@v4
+        with:
+          cache: 'npm'
+          cache-dependency-path: package-lock.json
+
+      # Install dependencies
+      - name: Install Dependencies
+        run: npm install
       
-#       #setup SSH
-#       - uses: webfactory/ssh-agent@v0.9.0
-#         with:
-#             ssh-private-key: |
-#                   ${{ secrets.SECRET_SSH_KEY }}
+      # Build the project
+      - name: Run build
+        run: npm run build
+      
+      # Setup SSH
+      - uses: webfactory/ssh-agent@v0.9.0
+        with:
+          ssh-private-key: ${{ secrets.SECRET_SSH_KEY }}
 
-#       # Update known_hosts
-#       - name: Update known_hosts
-#         run: ssh-keyscan -H 51.178.27.150 >> ~/.ssh/known_hosts
+      # Update known_hosts
+      - name: Update known_hosts
+        run: ssh-keyscan -H 51.178.27.150 >> ~/.ssh/known_hosts
     
-#       # On fait un ls sur le serveur distant
-#       - name: List remote files
-#         run: ssh debian@51.178.27.150 'scp -r dist/* debian@51.178.27.150:./var/www/html/PokemonDex'
+      # Copy build files to the remote server
+      - name: Copy build files
+        run: scp -r dist/* debian@51.178.27.150:/var/www/html/PokemonDex
