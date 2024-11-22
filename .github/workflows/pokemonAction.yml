@@ -39,27 +39,27 @@ jobs:
       - name: run eslint
         run: npx eslint "src/**/*.{js,jsx,ts,tsx}"
 
-      # # On lance le serveur 
-      # - name: Start the development server
-      #   run: npm run dev &
+      # On lance le serveur 
+      - name: Start the development server
+        run: npm run dev &
 
-      # # On attend que l'application soit prête
-      # - name: Wait for app to be ready
-      #   run: npx wait-on http://localhost:5173
+      # On attend que l'application soit prête
+      - name: Wait for app to be ready
+        run: npx wait-on http://localhost:5173
 
-      # # On lance les tests Cypress sur Chrome
-      # - name: E2E on Chrome
-      #   uses: actions/checkout@v4
-      # - uses: cypress-io/github-action@v6
-      #   with:
-      #     browser: chrome
+      # On lance les tests Cypress sur Chrome
+      - name: E2E on Chrome
+        uses: actions/checkout@v4
+      - uses: cypress-io/github-action@v6
+        with:
+          browser: chrome
       
-      # # On upload les vidéos des tests Cypress
-      # - name: Upload Cypress Video Artifact
-      #   uses: actions/upload-artifact@v3
-      #   with:
-      #     name: cypress-video
-      #     path: cypress/videos
+      # On upload les vidéos des tests Cypress
+      - name: Upload Cypress Video Artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: cypress-video
+          path: cypress/videos
 
       #setup SSH
       - uses: webfactory/ssh-agent@v0.9.0
