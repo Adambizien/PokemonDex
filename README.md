@@ -1,5 +1,5 @@
 ## Exercices CI/CD A3 - J4 - Matin
-(J'ai changer le nom de la CI a la fin ^^ [ici](https://github.com/Adambizien/PokemonDex/blob/37bccace830fc07bf54d5786d0ec2550bb600e00/.github/workflows/pokemonAction.yml))
+(J'ai changé le nom de la CI à la fin ^^ [ici](https://github.com/Adambizien/PokemonDex/blob/37bccace830fc07bf54d5786d0ec2550bb600e00/.github/workflows/pokemonAction.yml))
 ### Exercice 0
   Mettez votre projet de carte de Pokemon sur un repo GitHub public et envoyez-moi le lien sur Discord.
   
@@ -60,9 +60,9 @@ force les développeurs à faire des PR
 empêche les PR qui ne build pas d’être mergées dans main
 
 - Réponses :
-  - Chemin premier fois : settings du repo github -> Branches -> Add branch ruleset
-  - Si c'est déjà crée : settings du repo github -> Rules -> Rulesets -> selectioner la rulesets qu'on souhaite
-  -  je l'ai appler Main -> je l'ai activer -> j'ai set le target branches a default -> j'ai cochet restrict deletions, require a pull request before merging, require status checks to pass (en selectionnent l'action pokemonAction) et block force pushes.
+  - Chemin la première fois : settings du repo GitHub -> Branches -> Add branch ruleset
+  - Si c'est déjà créé : settings du repo GitHub -> Rules -> Rulesets -> sélectionner le ruleset souhaité
+  - Je l'ai appelé Main -> je l'ai activé -> j'ai défini la branche cible par défaut -> j'ai coché restrict deletions, require a pull request before merging, require status checks to pass (en sélectionnant l'action pokemonAction) et block force pushes.
     
  
 ### Exercice 7
