@@ -9,8 +9,9 @@
   Mettre en place une CI https://docs.github.com/fr/actions/writing-workflows/quickstart
   Mettre en place une CI Node : https://docs.github.com/en/actions/use-cases-and-examples/building-and-testing/building-and-testing-nodejs 
 
-  - Réponse : [ici](https://github.com/Adambizien/PokemonDex/actions/runs/11969897278)
-  [structure](https://github.com/Adambizien/PokemonDex/blob/cf9a758857a9f1844d1875edabfb023b34764c47/.github/workflows/test.yml)
+  - Réponse :
+    - [ici](https://github.com/Adambizien/PokemonDex/actions/runs/11969897278)
+    - [structure](https://github.com/Adambizien/PokemonDex/blob/cf9a758857a9f1844d1875edabfb023b34764c47/.github/workflows/test.yml)
 
  
 ### Exercice 2
